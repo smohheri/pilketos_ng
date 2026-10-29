@@ -1,0 +1,28 @@
+﻿{
+    "name":  "cakra",
+    "version":  "1.0.0",
+    "description":  "CAKRA 2026 — aplikasi pemilihan Ketua OSIS",
+    "main":  "index.js",
+    "directories":  {
+                        "test":  "tests"
+                    },
+    "scripts":  {
+                    "build":  "tailwindcss -i ./resources/css/app.css -o ./public/assets/css/app.css --minify",
+                    "watch":  "tailwindcss -i ./resources/css/app.css -o ./public/assets/css/app.css --watch",
+                    "test":  "php spark test"
+                },
+    "keywords":  [
+
+                 ],
+    "author":  "",
+    "license":  "ISC",
+    "type":  "commonjs",
+    "devDependencies":  {
+                            "tailwindcss":  "^3.4.17"
+                        },
+    "dependencies":  {
+                         "@fontsource/outfit":  "^5.3.0",
+                         "@fontsource/space-grotesk":  "^5.3.0",
+                         "alpinejs":  "^3.17.5"
+                     }
+}

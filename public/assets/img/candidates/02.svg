@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Ilustrasi vektor kandidat 2">
+  <rect width="800" height="1000" fill="#FFC93C"/>
+  <circle cx="140" cy="180" r="115" fill="#C7B7FF"/>
+  <circle cx="660" cy="310" r="95" fill="#F45B4F"/>
+  <path d="M0 820c150-95 270-95 400-20s270 65 400-35v235H0z" fill="#72E6B7"/>
+  <g stroke="#101828" stroke-width="10" stroke-linejoin="round">
+    <path d="M215 1000V735c0-160 82-255 185-255s185 95 185 255v265" fill="#101828"/>
+    <path d="M350 480h100v100c0 22-22 40-50 40s-50-18-50-40z" fill="#D9A57E"/>
+    <path d="M225 560c-8-155 55-250 175-250s183 95 175 250c-35-15-62-52-70-102-22 48-58 79-105 93-48-14-84-45-105-93-8 50-35 87-70 102z" fill="#C7B7FF"/>
+    <path d="M250 365c0-98 62-160 150-160s150 62 150 160c0 50-14 84-42 112-6-75-48-124-108-124s-102 49-108 124c-28-28-42-62-42-112z" fill="#C7B7FF"/>
+    <ellipse cx="400" cy="375" rx="112" ry="135" fill="#F0C6A2"/>
+    <path d="M288 370c0-86 50-140 112-140s112 54 112 140c0 14-2 27-5 40-18-34-45-54-77-58-18 26-46 42-84 46-16 1-32-8-44-28-9 26-14 38-14 0z" fill="#C7B7FF"/>
+    <path d="M400 650v210" fill="none"/>
+    <path d="M342 565c18 12 38 18 58 18s40-6 58-18" fill="none" stroke="#101828" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g fill="#101828">
+    <circle cx="352" cy="378" r="10"/>
+    <circle cx="448" cy="378" r="10"/>
+  </g>
+  <path d="M374 436c18 14 34 14 52 0" fill="none" stroke="#101828" stroke-width="8" stroke-linecap="round"/>
+  <g fill="#F45B4F">
+    <circle cx="400" cy="710" r="16"/>
+    <circle cx="400" cy="780" r="16"/>
+  </g>
+  <path d="M278 770c-40 36-58 96-58 168M522 770c40 36 58 96 58 168" fill="none" stroke="#101828" stroke-width="10" stroke-linecap="round"/>
+  <path d="M70 690l24 50 56 8-40 39 9 56-49-26-49 26 9-56-40-39 56-8z" fill="#FFFCF5" stroke="#101828" stroke-width="8" stroke-linejoin="round"/>
+  <text x="620" y="690" font-family="'Space Grotesk', sans-serif" font-size="210" font-weight="700" fill="#101828" opacity=".16">02</text>
+</svg>

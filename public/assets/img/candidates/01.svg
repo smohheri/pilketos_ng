@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Ilustrasi vektor kandidat 1">
+  <rect width="800" height="1000" fill="#2F5BFF"/>
+  <circle cx="680" cy="170" r="150" fill="#FFC93C"/>
+  <circle cx="128" cy="280" r="80" fill="#72E6B7" opacity=".9"/>
+  <path d="M0 780c130-80 250-80 400 0s290 80 400 10v210H0z" fill="#101828"/>
+  <g stroke="#101828" stroke-width="10" stroke-linejoin="round">
+    <path d="M230 1000V710c0-150 76-240 170-240s170 90 170 240v290" fill="#F45B4F"/>
+    <path d="M350 445h100v115c0 22-22 40-50 40s-50-18-50-40z" fill="#F1B48F"/>
+    <path d="M260 510c18-80 56-118 140-118s122 38 140 118c-36 32-82 48-140 48s-104-16-140-48z" fill="#101828"/>
+    <ellipse cx="400" cy="330" rx="125" ry="145" fill="#F6C7A6"/>
+    <path d="M275 315c0-95 56-155 125-155s125 60 125 155c-30-25-62-38-96-38-25 0-45 5-62 15-11 7-18 14-22 23z" fill="#101828"/>
+    <path d="M400 600v190" fill="none"/>
+    <path d="M340 535c18 12 38 18 60 18s42-6 60-18" fill="none" stroke="#101828" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g fill="#101828">
+    <circle cx="350" cy="330" r="10"/>
+    <circle cx="450" cy="330" r="10"/>
+  </g>
+  <path d="M372 390c18 14 38 14 56 0" fill="none" stroke="#101828" stroke-width="8" stroke-linecap="round"/>
+  <g fill="#FFC93C">
+    <circle cx="400" cy="675" r="16"/>
+    <circle cx="400" cy="745" r="16"/>
+  </g>
+  <path d="M296 720c-42 34-62 96-62 170M504 720c42 34 62 96 62 170" fill="none" stroke="#101828" stroke-width="10" stroke-linecap="round"/>
+  <path d="M68 120l28 58 64 9-46 44 11 64-57-30-57 30 11-64-46-44 64-9z" fill="#FFFCF5" stroke="#101828" stroke-width="8" stroke-linejoin="round"/>
+  <text x="640" y="690" font-family="'Space Grotesk', sans-serif" font-size="210" font-weight="700" fill="#FFFCF5" opacity=".22">01</text>
+</svg>

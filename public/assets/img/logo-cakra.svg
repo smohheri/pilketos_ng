@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Logo CAKRA 2026">
+  <circle cx="60" cy="60" r="56" fill="#101828"/>
+  <circle cx="60" cy="60" r="41" fill="#FFC93C"/>
+  <circle cx="60" cy="60" r="24" fill="#F45B4F"/>
+  <circle cx="60" cy="60" r="9" fill="#FFFCF5"/>
+  <g stroke="#101828" stroke-width="5" stroke-linecap="round">
+    <path d="M60 19v13M60 88v13M19 60h13M88 60h13"/>
+    <path d="M31 31l9 9M80 80l9 9M89 31l-9 9M40 80l-9 9"/>
+  </g>
+  <circle cx="60" cy="60" r="56" fill="none" stroke="#101828" stroke-width="5"/>
+  <path d="M83 38c-5-5-12-8-20-8-15 0-27 12-27 27s12 27 27 27c8 0 15-3 20-8" fill="none" stroke="#FFFCF5" stroke-width="7" stroke-linecap="round"/>
+</svg>

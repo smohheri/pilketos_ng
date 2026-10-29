@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Ilustrasi vektor kandidat 3">
+  <rect width="800" height="1000" fill="#72E6B7"/>
+  <circle cx="660" cy="160" r="135" fill="#F45B4F"/>
+  <rect x="60" y="240" width="170" height="170" rx="36" fill="#C7B7FF" stroke="#101828" stroke-width="8" transform="rotate(-9 145 325)"/>
+  <path d="M0 790c120-55 250-60 400 10s280 60 400-5v205H0z" fill="#101828"/>
+  <g stroke="#101828" stroke-width="10" stroke-linejoin="round">
+    <path d="M205 1000V735c0-155 85-250 195-250s195 95 195 250v265" fill="#F6F0E4"/>
+    <path d="M350 485h100v100c0 22-22 40-50 40s-50-18-50-40z" fill="#B9805A"/>
+    <path d="M240 535c20-85 70-125 160-125s140 40 160 125c-45 36-98 55-160 55s-115-19-160-55z" fill="#101828"/>
+    <ellipse cx="400" cy="340" rx="128" ry="145" fill="#D69B70"/>
+    <path d="M272 325c0-95 58-155 128-155s128 60 128 155c-25-45-70-72-128-72s-103 27-128 72z" fill="#101828"/>
+    <path d="M400 660v195" fill="none"/>
+    <path d="M338 550c20 12 41 18 62 18s42-6 62-18" fill="none" stroke="#101828" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="352" cy="345" r="45" fill="none" stroke="#101828" stroke-width="9"/>
+    <circle cx="448" cy="345" r="45" fill="none" stroke="#101828" stroke-width="9"/>
+    <path d="M397 345h6" fill="none" stroke="#101828" stroke-width="9"/>
+  </g>
+  <g fill="#101828">
+    <circle cx="352" cy="345" r="9"/>
+    <circle cx="448" cy="345" r="9"/>
+  </g>
+  <path d="M372 402c18 14 38 14 56 0" fill="none" stroke="#101828" stroke-width="8" stroke-linecap="round"/>
+  <g fill="#2F5BFF">
+    <path d="M320 690l40 22 40-22-40-22z"/>
+    <circle cx="400" cy="760" r="18"/>
+  </g>
+  <path d="M280 780c-42 34-62 94-62 168M520 780c42 34 62 94 62 168" fill="none" stroke="#101828" stroke-width="10" stroke-linecap="round"/>
+  <path d="M680 690l24 50 56 8-40 39 9 56-49-26-49 26 9-56-40-39 56-8z" fill="#FFC93C" stroke="#101828" stroke-width="8" stroke-linejoin="round"/>
+  <text x="620" y="690" font-family="'Space Grotesk', sans-serif" font-size="210" font-weight="700" fill="#101828" opacity=".18">03</text>
+</svg>

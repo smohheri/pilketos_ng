@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Ilustrasi vektor kandidat 4">
+  <rect width="800" height="1000" fill="#F45B4F"/>
+  <circle cx="140" cy="180" r="120" fill="#FFC93C"/>
+  <path d="M620 105l30 62 68 10-49 47 12 68-61-32-61 32 12-68-49-47 68-10z" fill="#C7B7FF" stroke="#101828" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M0 810c140-80 260-80 400-10s280 70 400-20v220H0z" fill="#2F5BFF"/>
+  <g stroke="#101828" stroke-width="10" stroke-linejoin="round">
+    <path d="M210 1000V735c0-160 85-255 190-255s190 95 190 255v265" fill="#FFC93C"/>
+    <path d="M350 480h100v105c0 22-22 40-50 40s-50-18-50-40z" fill="#F0C6A2"/>
+    <path d="M238 560c0-165 68-260 162-260s162 95 162 260c-40-20-67-66-77-128-26 44-56 70-90 78-33-9-61-29-83-59-12 55-38 93-74 109z" fill="#101828"/>
+    <path d="M246 400c0-115 65-180 154-180s154 65 154 180c0 54-16 92-46 120-8-80-54-136-108-136s-100 56-108 136c-30-28-46-66-46-120z" fill="#101828"/>
+    <ellipse cx="400" cy="365" rx="112" ry="135" fill="#F0C6A2"/>
+    <path d="M286 360c0-84 51-140 114-140s114 56 114 140c-20-55-61-88-114-88s-94 33-114 88z" fill="#101828"/>
+    <path d="M400 640v210" fill="none"/>
+    <path d="M342 555c18 12 38 18 58 18s40-6 58-18" fill="none" stroke="#101828" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g fill="#101828">
+    <circle cx="352" cy="365" r="10"/>
+    <circle cx="448" cy="365" r="10"/>
+  </g>
+  <path d="M374 424c18 14 34 14 52 0" fill="none" stroke="#101828" stroke-width="8" stroke-linecap="round"/>
+  <g fill="#F6F0E4">
+    <circle cx="400" cy="700" r="16"/>
+    <circle cx="400" cy="765" r="16"/>
+  </g>
+  <path d="M275 760c-42 36-62 96-62 168M525 760c42 36 62 96 62 168" fill="none" stroke="#101828" stroke-width="10" stroke-linecap="round"/>
+  <path d="M680 620l24 50 56 8-40 39 9 56-49-26-49 26 9-56-40-39 56-8z" fill="#72E6B7" stroke="#101828" stroke-width="8" stroke-linejoin="round"/>
+  <text x="610" y="690" font-family="'Space Grotesk', sans-serif" font-size="210" font-weight="700" fill="#FFFCF5" opacity=".22">04</text>
+</svg>
