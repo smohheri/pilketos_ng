@@ -76,7 +76,9 @@ Jalankan migrasi:
 php spark migrate
 ```
 
-Opsional, isi data demo:
+`php spark migrate` sekaligus membuat data awal yang dibutuhkan aplikasi: akun admin dan panitia, profil sekolah, pemilihan OSIS dan Poltar, serta pengaturan sistem.
+
+Opsional, isi data demo tambahan (kandidat, jadwal, FAQ, siswa, dan suara):
 
 ```powershell
 php spark db:seed DatabaseSeeder
@@ -91,9 +93,9 @@ php spark serve --host localhost --port 8080
 
 Buka `http://localhost:8080/`.
 
-## Akun demo
+## Akun awal
 
-Jika `DatabaseSeeder` dijalankan:
+Akun admin dan panitia dibuat saat `php spark migrate`:
 
 | Peran | Email | Kata sandi |
 | --- | --- | --- |
@@ -145,6 +147,10 @@ Admin dapat mengaktifkan fitur penilaian di **Admin > Pengaturan > Aktifkan peni
 
 - Saat aktif, setiap panitia dapat menambahkan kriteria dan mengisi nilai kandidat untuk pemilihan yang ditugaskan melalui menu **Penilaian**.
 - Saat nonaktif, form kriteria tidak tampil dan perubahan nilai ditolak, tetapi data penilaian yang sudah ada tetap tersimpan.
+
+## Konten landing
+
+Copywriting utama halaman beranda dapat diedit di **Admin > Konten Landing**, meliputi hero, judul section, pilar nilai, langkah panduan, tagline, dan catatan privasi. Nilai disimpan pada `system_settings` dengan prefix `landing_`. Jika sebuah kolom dikosongkan, aplikasi memakai teks bawaan.
 
 ## Mengatur OSIS dan Poltar
 

@@ -9,66 +9,40 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $db = db_connect();
-        $now = date('Y-m-d H:i:s');
 
-        if ($db->table('users')->countAllResults() > 0) {
+        if ($db->table('candidates')->countAllResults() > 0) {
             return;
         }
 
-        $db->table('users')->insertBatch([
-            [
-                'name' => 'Administrator CAKRA',
-                'email' => 'admin@cakra.test',
-                'password_hash' => password_hash('Cakra2026!', PASSWORD_DEFAULT),
-                'role' => 'admin',
-                'is_active' => 1,
+        $now = date('Y-m-d H:i:s');
+
+        $osis = $db->table('elections')->where('type', 'osis')->orderBy('id', 'ASC')->get()->getRowArray();
+        if ($osis === null) {
+            $start = date('Y-m-d H:i:s', strtotime('-2 days'));
+            $end = date('Y-m-d H:i:s', strtotime('+5 days'));
+            $publish = date('Y-m-d H:i:s', strtotime('+6 days'));
+
+            $db->table('elections')->insert([
+                'type' => 'osis',
+                'slug' => 'osis',
+                'title' => 'Pemilihan Ketua OSIS 2026',
+                'description' => 'Pemilihan Ketua dan Wakil Ketua OSIS SMA Negeri 1 Nusantara periode 2026/2027. Satu siswa, satu suara, untuk sekolah yang lebih baik.',
+                'start_at' => $start,
+                'end_at' => $end,
+                'result_publish_at' => $publish,
+                'status' => 'published',
+                'is_enabled' => 1,
+                'timezone' => 'Asia/Makassar',
+                'result_mode' => 'vote_only',
+                'vote_weight' => 50.0,
+                'assessment_weight' => 50.0,
                 'created_at' => $now,
                 'updated_at' => $now,
-            ],
-            [
-                'name' => 'Panitia Pemilihan',
-                'email' => 'panitia@cakra.test',
-                'password_hash' => password_hash('Panitia2026!', PASSWORD_DEFAULT),
-                'role' => 'panitia',
-                'is_active' => 1,
-                'created_at' => $now,
-                'updated_at' => $now,
-            ],
-        ]);
-
-        $db->table('school_profiles')->insert([
-            'school_name' => 'SMA Negeri 1 Nusantara',
-            'short_name' => 'SMAN 1 Nusantara',
-            'logo_path' => 'assets/img/logo-cakra.svg',
-            'description' => 'SMA Negeri 1 Nusantara adalah sekolah yang tumbuh bersama semangat kolaborasi, kreativitas, dan kepedulian. Kami percaya bahwa setiap siswa memiliki suara dan peran untuk membawa perubahan yang baik.',
-            'vision' => 'Terwujudnya generasi Nusantara yang berkarakter, kreatif, berdaya saing global, dan peduli terhadap sesama.',
-            'mission' => "Menyelenggarakan pembelajaran yang aktif, menyenangkan, dan bermakna.\nMenumbuhkan budaya kolaborasi, inovasi, dan integritas.\nMembuka ruang partisipasi siswa dalam kehidupan sekolah.\nMenguatkan kepedulian sosial dan lingkungan.",
-            'official_website' => 'https://sman1nusantara.sch.id',
-            'official_contact' => '0812-3456-7890',
-            'address' => 'Jl. Pendidikan Raya No. 17, Kota Nusantara',
-            'footer_text' => 'CAKRA 2026 — Pilih dengan Hati, Pimpin dengan Aksi.',
-            'updated_by' => 1,
-            'created_at' => $now,
-            'updated_at' => $now,
-        ]);
-
-        $start = date('Y-m-d H:i:s', strtotime('-2 days'));
-        $end = date('Y-m-d H:i:s', strtotime('+5 days'));
-        $publish = date('Y-m-d H:i:s', strtotime('+6 days'));
-
-        $db->table('elections')->insert([
-            'title' => 'Pemilihan Ketua OSIS 2026',
-            'description' => 'Pemilihan Ketua dan Wakil Ketua OSIS SMA Negeri 1 Nusantara periode 2026/2027. Satu siswa, satu suara, untuk sekolah yang lebih baik.',
-            'start_at' => $start,
-            'end_at' => $end,
-            'result_publish_at' => $publish,
-            'status' => 'published',
-            'timezone' => 'Asia/Makassar',
-            'created_by' => 1,
-            'created_at' => $now,
-            'updated_at' => $now,
-        ]);
-        $electionId = (int) $db->insertID();
+            ]);
+            $electionId = (int) $db->insertID();
+        } else {
+            $electionId = (int) $osis['id'];
+        }
 
         $candidates = [
             [
@@ -158,8 +132,8 @@ class DatabaseSeeder extends Seeder
                 'election_id' => $electionId,
                 'title' => 'Pemungutan Suara',
                 'description' => 'Pemungutan suara daring melalui aplikasi CAKRA 2026.',
-                'start_at' => $start,
-                'end_at' => $end,
+                'start_at' => date('Y-m-d H:i:s', strtotime('-2 days')),
+                'end_at' => date('Y-m-d H:i:s', strtotime('+5 days')),
                 'sort_order' => 4,
                 'created_at' => $now,
                 'updated_at' => $now,
@@ -168,8 +142,8 @@ class DatabaseSeeder extends Seeder
                 'election_id' => $electionId,
                 'title' => 'Penghitungan & Pengumuman',
                 'description' => 'Rekapitulasi suara dan pengumuman hasil pemilihan.',
-                'start_at' => $end,
-                'end_at' => $publish,
+                'start_at' => date('Y-m-d H:i:s', strtotime('+5 days')),
+                'end_at' => date('Y-m-d H:i:s', strtotime('+6 days')),
                 'sort_order' => 5,
                 'created_at' => $now,
                 'updated_at' => $now,
@@ -217,15 +191,6 @@ class DatabaseSeeder extends Seeder
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
-        ]);
-
-        $db->table('system_settings')->insertBatch([
-            ['setting_key' => 'app_name', 'setting_value' => 'CAKRA 2026', 'updated_by' => 1, 'created_at' => $now, 'updated_at' => $now],
-            ['setting_key' => 'app_tagline', 'setting_value' => 'Pilih dengan Hati, Pimpin dengan Aksi.', 'updated_by' => 1, 'created_at' => $now, 'updated_at' => $now],
-            ['setting_key' => 'support_whatsapp', 'setting_value' => '6281234567890', 'updated_by' => 1, 'created_at' => $now, 'updated_at' => $now],
-            ['setting_key' => 'support_email', 'setting_value' => 'panitia@cakra.test', 'updated_by' => 1, 'created_at' => $now, 'updated_at' => $now],
-            ['setting_key' => 'school_year', 'setting_value' => '2025/2026', 'updated_by' => 1, 'created_at' => $now, 'updated_at' => $now],
-            ['setting_key' => 'announcement', 'setting_value' => 'Pemungutan suara dibuka hingga 5 hari ke depan. Pastikan suaramu tercatat!', 'updated_by' => 1, 'created_at' => $now, 'updated_at' => $now],
         ]);
 
         $names = [
@@ -299,8 +264,10 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
+        $admin = $db->table('users')->where('role', 'admin')->orderBy('id', 'ASC')->get()->getRowArray();
+
         $db->table('audit_logs')->insert([
-            'actor_id' => 1,
+            'actor_id' => $admin !== null ? (int) $admin['id'] : null,
             'actor_role' => 'admin',
             'action' => 'system.seed',
             'entity_type' => 'system',

@@ -12,7 +12,7 @@ class ElectionMode extends BaseController
 {
     public function index()
     {
-        $elections = (new ElectionModel())->orderBy('id', 'ASC')->findAll();
+        $elections = admin_elections();
         $service = new ElectionService();
         $candidateModel = new CandidateModel();
 

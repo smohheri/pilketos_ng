@@ -90,6 +90,8 @@ $routes->group('admin', static function (RouteCollection $routes): void {
             $routes->get('audit', 'Admin\Audit::index');
             $routes->get('mode-aplikasi', 'Admin\ElectionMode::index');
             $routes->post('mode-aplikasi', 'Admin\ElectionMode::update');
+            $routes->get('konten', 'Admin\Content::index');
+            $routes->post('konten', 'Admin\Content::update');
             $routes->get('pengaturan', 'Admin\Setting::index');
             $routes->post('pengaturan', 'Admin\Setting::update');
             $routes->get('pengaturan/openwa', 'Admin\Setting::openwa');

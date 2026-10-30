@@ -11,6 +11,18 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/) dan
 - Peningkatan cakupan test otomatis untuk alur voting berurutan.
 - Dokumentasi operasional panitia dan buku panduan pemilih.
 
+## [1.2.0] - 2026-10-30
+
+### Added
+
+- Migrasi `BootstrapInitialData` untuk membuat data awal saat instalasi pertama (akun admin/panitia, profil sekolah, pemilihan OSIS dan Poltar, serta pengaturan sistem) tanpa perlu menjalankan seeder.
+- Seeder `DatabaseSeeder` kini hanya menambahkan data demo (kandidat, jadwal, FAQ, siswa, dan suara) dan tidak lagi membuat data dasar.
+- Halaman **Konten Landing** (`/admin/konten`) untuk mengedit copywriting utama halaman beranda (hero, judul section, pilar nilai, langkah panduan, dan catatan privasi) yang tersimpan di database.
+
+### Changed
+
+- Daftar pemilihan di admin diurutkan OSIS lebih dulu agar konsisten di instalasi baru.
+
 ## [1.1.0] - 2026-10-30
 
 ### Added

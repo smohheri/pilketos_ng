@@ -54,17 +54,17 @@ $scheduleStatus = static function (array $stage) use ($now): string {
 };
 
 $values = [
-    ['icon' => 'megaphone', 'title' => 'Aspiratif', 'text' => 'Mendengar semua suara, bukan hanya yang paling lantang.', 'color' => 'bg-coral text-white'],
-    ['icon' => 'sparkles', 'title' => 'Kreatif', 'text' => 'Menghadirkan ide segar dan cara baru untuk sekolah.', 'color' => 'bg-sun text-ink'],
-    ['icon' => 'refresh', 'title' => 'Responsif', 'text' => 'Cepat tanggap terhadap kebutuhan dan masalah siswa.', 'color' => 'bg-cobalt text-white'],
-    ['icon' => 'shield', 'title' => 'Amanah', 'text' => 'Menjaga kepercayaan, transparansi, dan integritas.', 'color' => 'bg-mint text-ink'],
+    ['icon' => 'megaphone', 'title' => landing_text('pillar_1_title', 'Aspiratif'), 'text' => landing_text('pillar_1_text', 'Mendengar semua suara, bukan hanya yang paling lantang.'), 'color' => 'bg-coral text-white'],
+    ['icon' => 'sparkles', 'title' => landing_text('pillar_2_title', 'Kreatif'), 'text' => landing_text('pillar_2_text', 'Menghadirkan ide segar dan cara baru untuk sekolah.'), 'color' => 'bg-sun text-ink'],
+    ['icon' => 'refresh', 'title' => landing_text('pillar_3_title', 'Responsif'), 'text' => landing_text('pillar_3_text', 'Cepat tanggap terhadap kebutuhan dan masalah siswa.'), 'color' => 'bg-cobalt text-white'],
+    ['icon' => 'shield', 'title' => landing_text('pillar_4_title', 'Amanah'), 'text' => landing_text('pillar_4_text', 'Menjaga kepercayaan, transparansi, dan integritas.'), 'color' => 'bg-mint text-ink'],
 ];
 
 $steps = [
-    ['icon' => 'key', 'color' => 'bg-sun text-ink', 'title' => 'Aktivasi akun', 'text' => 'Masukkan NIS dan tanggal lahir yang terdaftar di sekolah.'],
-    ['icon' => 'whatsapp', 'color' => 'bg-mint text-ink', 'title' => 'Verifikasi OTP', 'text' => 'Kode 6 digit dikirim ke WhatsApp resmi yang tersimpan.'],
-    ['icon' => 'ballot', 'color' => 'bg-coral text-white', 'title' => 'Pilih kandidat', 'text' => 'Pelajari visi-misi, lalu pilih satu kandidat favoritmu.'],
-    ['icon' => 'fingerprint', 'color' => 'bg-cobalt text-white', 'title' => 'Konfirmasi & bukti', 'text' => 'Periksa pilihan, kirim suara, dan simpan kode bukti acak.'],
+    ['icon' => 'key', 'color' => 'bg-sun text-ink', 'title' => landing_text('step_1_title', 'Aktivasi akun'), 'text' => landing_text('step_1_text', 'Masukkan NIS dan tanggal lahir yang terdaftar di sekolah.')],
+    ['icon' => 'whatsapp', 'color' => 'bg-mint text-ink', 'title' => landing_text('step_2_title', 'Verifikasi OTP'), 'text' => landing_text('step_2_text', 'Kode 6 digit dikirim ke WhatsApp resmi yang tersimpan.')],
+    ['icon' => 'ballot', 'color' => 'bg-coral text-white', 'title' => landing_text('step_3_title', 'Pilih kandidat'), 'text' => landing_text('step_3_text', 'Pelajari visi-misi, lalu pilih satu kandidat favoritmu.')],
+    ['icon' => 'fingerprint', 'color' => 'bg-cobalt text-white', 'title' => landing_text('step_4_title', 'Konfirmasi & bukti'), 'text' => landing_text('step_4_text', 'Periksa pilihan, kirim suara, dan simpan kode bukti acak.')],
 ];
 ?>
 
@@ -85,17 +85,17 @@ $steps = [
         <div class="grid items-center gap-12 lg:grid-cols-[1.04fr_0.96fr]">
             <div class="animate-fade-up">
                 <div class="flex flex-wrap items-center gap-2">
-                    <span class="eyebrow-solid"><span class="h-2 w-2 rounded-full bg-mint <?= $isLive ? 'animate-pulse' : '' ?>"></span> Pemilihan Ketua OSIS &amp; Poltar 2026</span>
+                    <span class="eyebrow-solid"><span class="h-2 w-2 rounded-full bg-mint <?= $isLive ? 'animate-pulse' : '' ?>"></span> <?= esc(landing_text('hero_eyebrow', 'Pemilihan Ketua OSIS & Poltar 2026')) ?></span>
                     <span class="<?= esc($meta['class']) ?>"><?= esc($meta['label']) ?></span>
                 </div>
 
                 <h1 class="mt-6 font-display text-[2.75rem] font-bold leading-[0.95] tracking-[-0.045em] text-ink sm:text-6xl lg:text-[4.6rem]">
-                    Pilih dengan <span class="highlight">Hati</span>,<br>
-                    Pimpin dengan <span class="relative inline-block text-coral">Aksi<span class="absolute -bottom-1 left-0 h-3 w-full rounded-full bg-sun/80 -z-10"></span></span>.
+                    <?= esc(landing_text('hero_heading_line_1', 'Pilih dengan Hati,')) ?><br>
+                    <span class="relative inline-block text-coral"><?= esc(landing_text('hero_heading_line_2', 'Pimpin dengan Aksi.')) ?><span class="absolute -bottom-1 left-0 h-3 w-full rounded-full bg-sun/80 -z-10"></span></span>
                 </h1>
 
                 <p class="mt-6 max-w-xl text-base leading-relaxed text-ink/65 sm:text-lg">
-                    <?= esc($election['description'] ?? 'Satu siswa, satu suara. Saatnya memilih pemimpin yang mendengar, bergerak, dan membawa sekolah kita lebih baik.') ?>
+                    <?= esc(landing_text('hero_subtitle', $election['description'] ?? 'Satu siswa, satu suara. Saatnya memilih pemimpin yang mendengar, bergerak, dan membawa sekolah kita lebih baik.')) ?>
                 </p>
 
                 <div class="mt-7 flex flex-wrap gap-3">
@@ -103,7 +103,7 @@ $steps = [
                         <?= icon('ballot', 'h-4 w-4') ?> <?= esc($primaryLabel) ?>
                     </a>
                     <a href="#pemilihan" class="btn btn-light">
-                        Dua Pemilihan <?= icon('arrow-right', 'h-4 w-4') ?>
+                        <?= esc(landing_text('hero_cta_secondary', 'Dua Pemilihan')) ?> <?= icon('arrow-right', 'h-4 w-4') ?>
                     </a>
                     <a href="#panduan" class="hidden items-center gap-1 px-2 font-display text-sm font-semibold text-ink/60 underline decoration-ink/20 decoration-2 underline-offset-4 transition hover:text-ink sm:inline-flex">
                         Cara memilih
@@ -254,8 +254,8 @@ $steps = [
     <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
             <span class="eyebrow"><?= icon('ballot', 'h-3.5 w-3.5') ?> Dua pemilihan</span>
-            <h2 class="mt-3 text-3xl font-bold tracking-[-0.03em] sm:text-4xl">Satu sekolah, dua pilihan.</h2>
-            <p class="mt-2 max-w-2xl text-sm leading-relaxed text-ink/55">Ketua OSIS dan Ketua Poltar dipilih pada pemilihan terpisah, dengan kandidat, jadwal, dan panitia masing-masing.</p>
+            <h2 class="mt-3 text-3xl font-bold tracking-[-0.03em] sm:text-4xl"><?= esc(landing_text('pemilihan_heading', 'Satu sekolah, dua pilihan.')) ?></h2>
+            <p class="mt-2 max-w-2xl text-sm leading-relaxed text-ink/55"><?= esc(landing_text('pemilihan_subtext', 'Ketua OSIS dan Ketua Poltar dipilih pada pemilihan terpisah, dengan kandidat, jadwal, dan panitia masing-masing.')) ?></p>
         </div>
     </div>
 
@@ -309,13 +309,13 @@ $steps = [
         <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
             <div>
                 <span class="eyebrow">Tentang CAKRA 2026</span>
-                <h2 class="mt-5 text-4xl font-bold leading-[1.02] tracking-[-0.03em] sm:text-5xl">Demokrasi kecil yang berdampak besar.</h2>
+                <h2 class="mt-5 text-4xl font-bold leading-[1.02] tracking-[-0.03em] sm:text-5xl"><?= esc(landing_text('tentang_heading', 'Demokrasi kecil yang berdampak besar.')) ?></h2>
                 <p class="mt-5 max-w-lg text-base leading-relaxed text-ink/65">
                     <?= esc($profile['description'] ?? 'CAKRA 2026 menghadirkan pemilihan Ketua OSIS yang lebih praktis, modern, dan paperless. Semua siswa dapat melihat kandidat, memahami gagasan, dan memberikan suara dengan aman.') ?>
                 </p>
                 <div class="mt-8 rounded-3xl border-2 border-ink bg-sun p-6 shadow-hard-sm">
-                    <p class="font-display text-2xl font-bold leading-snug">“Pilih dengan Hati, Pimpin dengan Aksi.”</p>
-                    <p class="mt-2 text-sm text-ink/60">— Tagline resmi CAKRA 2026</p>
+                    <p class="font-display text-2xl font-bold leading-snug">“<?= esc(landing_text('tentang_tagline', 'Pilih dengan Hati, Pimpin dengan Aksi.')) ?>”</p>
+                    <p class="mt-2 text-sm text-ink/60"><?= esc(landing_text('tentang_tagline_note', '— Tagline resmi CAKRA 2026')) ?></p>
                 </div>
             </div>
 
@@ -377,8 +377,8 @@ $steps = [
         <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
                 <span class="eyebrow"><?= icon('users', 'h-3.5 w-3.5') ?> Kandidat</span>
-                <h2 class="mt-4 text-4xl font-bold leading-[1.02] tracking-[-0.03em] sm:text-5xl">Kenali pilihanmu.</h2>
-                <p class="mt-3 max-w-2xl text-base text-ink/60">Baca visi, misi, dan program kerja setiap kandidat. Pilih yang paling sesuai dengan harapanmu untuk sekolah.</p>
+                <h2 class="mt-4 text-4xl font-bold leading-[1.02] tracking-[-0.03em] sm:text-5xl"><?= esc(landing_text('kandidat_heading', 'Kenali pilihanmu.')) ?></h2>
+                <p class="mt-3 max-w-2xl text-base text-ink/60"><?= esc(landing_text('kandidat_subtext', 'Baca visi, misi, dan program kerja setiap kandidat. Pilih yang paling sesuai dengan harapanmu untuk sekolah.')) ?></p>
             </div>
             <?php if ($candidateCount > 0): ?>
                 <span class="chip !border-ink/15 !bg-paper !px-4 !py-2"><?= $candidateCount ?> kandidat · <?= esc($election['title'] ?? '') ?></span>
@@ -495,8 +495,8 @@ $steps = [
         <div class="grid gap-8 lg:grid-cols-[1fr_0.72fr] lg:gap-14">
             <div>
                 <span class="eyebrow"><?= icon('calendar', 'h-3.5 w-3.5') ?> Jadwal</span>
-                <h2 class="mt-4 text-4xl font-bold leading-[1.02] tracking-[-0.03em] sm:text-5xl">Setiap tahap, transparan.</h2>
-                <p class="mt-3 max-w-xl text-base text-ink/60">Ikuti rangkaian pemilihan dari publikasi kandidat hingga pengumuman hasil.</p>
+                <h2 class="mt-4 text-4xl font-bold leading-[1.02] tracking-[-0.03em] sm:text-5xl"><?= esc(landing_text('jadwal_heading', 'Setiap tahap, transparan.')) ?></h2>
+                <p class="mt-3 max-w-xl text-base text-ink/60"><?= esc(landing_text('jadwal_subtext', 'Ikuti rangkaian pemilihan dari publikasi kandidat hingga pengumuman hasil.')) ?></p>
 
                 <?php if ($schedules === []): ?>
                     <p class="mt-8 rounded-2xl border-2 border-dashed border-ink/20 bg-paper p-6 text-sm text-ink/55">Jadwal tahapan belum tersedia.</p>
@@ -598,8 +598,8 @@ $steps = [
     <div class="shell">
         <div class="text-center">
             <span class="eyebrow"><?= icon('list', 'h-3.5 w-3.5') ?> Panduan</span>
-            <h2 class="mx-auto mt-4 max-w-2xl text-4xl font-bold leading-[1.02] tracking-[-0.03em] sm:text-5xl">Memilih itu mudah.</h2>
-            <p class="mx-auto mt-3 max-w-xl text-base text-ink/60">Empat langkah singkat, tanpa kertas, tanpa ribet. Pastikan nomor WhatsApp-mu aktif.</p>
+            <h2 class="mx-auto mt-4 max-w-2xl text-4xl font-bold leading-[1.02] tracking-[-0.03em] sm:text-5xl"><?= esc(landing_text('panduan_heading', 'Memilih itu mudah.')) ?></h2>
+            <p class="mx-auto mt-3 max-w-xl text-base text-ink/60"><?= esc(landing_text('panduan_subtext', 'Empat langkah singkat, tanpa kertas, tanpa ribet. Pastikan nomor WhatsApp-mu aktif.')) ?></p>
         </div>
 
         <div class="relative mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -620,8 +620,8 @@ $steps = [
             <div class="flex items-start gap-3">
                 <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-ink text-cream"><?= icon('lock', 'h-4 w-4') ?></span>
                 <div>
-                    <p class="font-display text-sm font-bold">Pilihanmu rahasia.</p>
-                    <p class="mt-0.5 text-sm text-ink/60">Data pemilih dan data suara disimpan terpisah. Tidak ada yang bisa melihat kandidat yang kamu pilih.</p>
+                    <p class="font-display text-sm font-bold"><?= esc(landing_text('privacy_heading', 'Pilihanmu rahasia.')) ?></p>
+                    <p class="mt-0.5 text-sm text-ink/60"><?= esc(landing_text('privacy_text', 'Data pemilih dan data suara disimpan terpisah. Tidak ada yang bisa melihat kandidat yang kamu pilih.')) ?></p>
                 </div>
             </div>
             <a href="<?= base_url('aktivasi') ?>" class="btn btn-dark btn-sm shrink-0">Mulai aktivasi <?= icon('arrow-right', 'h-4 w-4') ?></a>

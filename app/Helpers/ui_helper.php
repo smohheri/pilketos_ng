@@ -167,6 +167,15 @@ if (! function_exists('app_setting')) {
     }
 }
 
+if (! function_exists('landing_text')) {
+    function landing_text(string $key, string $default = ''): string
+    {
+        $value = app_setting('landing_' . $key, '');
+
+        return ($value !== null && trim($value) !== '') ? $value : $default;
+    }
+}
+
 if (! function_exists('normalize_wa_number')) {
     function normalize_wa_number(string $value): string
     {

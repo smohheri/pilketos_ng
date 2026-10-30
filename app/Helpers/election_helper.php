@@ -82,7 +82,10 @@ if (! function_exists('admin_elections')) {
             return $election !== null ? [$election] : [];
         }
 
-        return (new ElectionModel())->orderBy('id', 'ASC')->findAll();
+        return (new ElectionModel())
+            ->orderBy("type = 'osis'", 'DESC', false)
+            ->orderBy('id', 'ASC')
+            ->findAll();
     }
 }
 
