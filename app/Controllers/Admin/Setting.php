@@ -47,6 +47,8 @@ class Setting extends BaseController
             $model->put($key, $value, $userId);
         }
 
+        $model->put('assessment_enabled', $this->request->getPost('assessment_enabled') === '1' ? '1' : '0', $userId);
+
         $this->audit('setting.update', 'system_setting', null);
 
         return redirect()->to('/admin/pengaturan')->with('success', 'Pengaturan aplikasi diperbarui.');

@@ -16,8 +16,25 @@ if (! function_exists('election_type_label')) {
     function election_type_label(?string $type): string
     {
         $options = election_type_options();
+        $fallback = $options[$type ?? ''] ?? ($type !== null && $type !== '' ? strtoupper($type) : 'Pemilihan');
 
-        return $options[$type ?? ''] ?? ($type !== null && $type !== '' ? strtoupper($type) : 'Pemilihan');
+        $key = $type !== null ? strtolower(trim($type)) : '';
+        if ($key === 'osis' || $key === 'poltar') {
+            $custom = app_setting('election_label_' . $key, '');
+
+            return $custom !== null && trim($custom) !== ''
+                ? trim($custom)
+                : $fallback;
+        }
+
+        return $fallback;
+    }
+}
+
+if (! function_exists('assessment_enabled')) {
+    function assessment_enabled(): bool
+    {
+        return filter_var(app_setting('assessment_enabled', '0'), FILTER_VALIDATE_BOOLEAN);
     }
 }
 

@@ -4,6 +4,7 @@
 $pageTitle = 'Pengaturan';
 $pageSubtitle = 'Konfigurasi identitas aplikasi, kontak bantuan, dan gateway WhatsApp.';
 $value = static fn (string $key, string $default = ''): string => (string) (old($key) ?? ($settings[$key] ?? $default));
+$assessmentEnabled = filter_var($value('assessment_enabled', '0'), FILTER_VALIDATE_BOOLEAN);
 $wa = $whatsapp ?? [];
 $waActive = ! empty($wa['enabled']) && ($wa['base_url'] ?? '') !== '';
 $waMode = ! empty($wa['session_mode']) ? 'OpenWA session' : 'Legacy /sendText';
@@ -42,6 +43,17 @@ $waMode = ! empty($wa['session_mode']) ? 'OpenWA session' : 'Legacy /sendText';
             </div>
 
             <div class="my-2 divider-dots"></div>
+
+            <div class="rounded-3xl border-2 border-ink/10 bg-cream/60 p-4 sm:p-5">
+                <label class="flex cursor-pointer items-start gap-3">
+                    <input type="hidden" name="assessment_enabled" value="0">
+                    <input type="checkbox" name="assessment_enabled" value="1" class="mt-0.5 h-4 w-4 rounded border-ink/20 text-cobalt focus:ring-cobalt" <?= $assessmentEnabled ? 'checked' : '' ?>>
+                    <span>
+                        <span class="font-display text-sm font-bold">Aktifkan penilaian</span>
+                        <span class="mt-1 block text-xs leading-relaxed text-ink/50">Jika aktif, panitia masing-masing dapat menambahkan kriteria penilaian dan mengisi nilai kandidat pada pemilihan yang ditugaskan.</span>
+                    </span>
+                </label>
+            </div>
 
             <div class="grid gap-4 sm:grid-cols-2">
                 <div class="field mb-0">

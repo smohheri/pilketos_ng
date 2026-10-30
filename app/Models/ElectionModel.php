@@ -12,12 +12,13 @@ class ElectionModel extends Model
     protected $useTimestamps = true;
     protected $allowedFields = [
         'type', 'slug', 'title', 'description', 'start_at', 'end_at', 'result_publish_at',
-        'status', 'timezone', 'result_mode', 'vote_weight', 'assessment_weight', 'created_by',
+        'status', 'is_enabled', 'timezone', 'result_mode', 'vote_weight', 'assessment_weight', 'created_by',
     ];
 
     public function publicElections(): array
     {
         return $this->where('status !=', 'draft')
+            ->where('is_enabled', 1)
             ->orderBy('id', 'ASC')
             ->findAll();
     }
@@ -29,17 +30,18 @@ class ElectionModel extends Model
 
     public function publicBySlug(string $slug): ?array
     {
-        return $this->where('slug', $slug)->where('status !=', 'draft')->first();
+        return $this->where('slug', $slug)->where('status !=', 'draft')->where('is_enabled', 1)->first();
     }
 
     public function defaultPublic(): ?array
     {
         $election = $this->where('type', 'osis')
             ->where('status !=', 'draft')
+            ->where('is_enabled', 1)
             ->orderBy('id', 'ASC')
             ->first();
 
-        return $election ?? $this->where('status !=', 'draft')->orderBy('id', 'ASC')->first();
+        return $election ?? $this->where('status !=', 'draft')->where('is_enabled', 1)->orderBy('id', 'ASC')->first();
     }
 
     public function current(): ?array

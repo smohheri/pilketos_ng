@@ -24,6 +24,7 @@ class Assessment extends BaseController
                 'scores' => [],
                 'report' => null,
                 'reportCandidates' => [],
+                'assessmentEnabled' => assessment_enabled(),
                 'appName' => app_setting('app_name', 'CAKRA 2026'),
             ]);
         }
@@ -46,12 +47,17 @@ class Assessment extends BaseController
             'scores' => (new CandidateAssessmentModel())->matrixForElection($electionId),
             'report' => $report,
             'reportCandidates' => $reportCandidates,
+            'assessmentEnabled' => assessment_enabled(),
             'appName' => app_setting('app_name', 'CAKRA 2026'),
         ]);
     }
 
     public function storeCriterion()
     {
+        if (! assessment_enabled()) {
+            return redirect()->to('/admin/penilaian')->with('error', 'Penilaian belum diaktifkan oleh admin.');
+        }
+
         $election = $this->election();
         if ($election === null) {
             return redirect()->to('/admin/pemilihan')->with('error', 'Buat konfigurasi pemilihan terlebih dahulu.');
@@ -79,6 +85,10 @@ class Assessment extends BaseController
 
     public function updateCriterion(int $id)
     {
+        if (! assessment_enabled()) {
+            return redirect()->to('/admin/penilaian')->with('error', 'Penilaian belum diaktifkan oleh admin.');
+        }
+
         $election = $this->election();
         $criterion = $election !== null
             ? (new AssessmentCriterionModel())->forElectionAndId($id, (int) $election['id'])
@@ -108,6 +118,10 @@ class Assessment extends BaseController
 
     public function toggleCriterion(int $id)
     {
+        if (! assessment_enabled()) {
+            return redirect()->to('/admin/penilaian')->with('error', 'Penilaian belum diaktifkan oleh admin.');
+        }
+
         $election = $this->election();
         $criterion = $election !== null
             ? (new AssessmentCriterionModel())->forElectionAndId($id, (int) $election['id'])
@@ -125,6 +139,10 @@ class Assessment extends BaseController
 
     public function deleteCriterion(int $id)
     {
+        if (! assessment_enabled()) {
+            return redirect()->to('/admin/penilaian')->with('error', 'Penilaian belum diaktifkan oleh admin.');
+        }
+
         $election = $this->election();
         $criterion = $election !== null
             ? (new AssessmentCriterionModel())->forElectionAndId($id, (int) $election['id'])
@@ -141,6 +159,10 @@ class Assessment extends BaseController
 
     public function saveScores()
     {
+        if (! assessment_enabled()) {
+            return redirect()->to('/admin/penilaian')->with('error', 'Penilaian belum diaktifkan oleh admin.');
+        }
+
         $election = $this->election();
         if ($election === null) {
             return redirect()->to('/admin/pemilihan')->with('error', 'Buat konfigurasi pemilihan terlebih dahulu.');

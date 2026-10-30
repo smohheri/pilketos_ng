@@ -77,7 +77,9 @@ class Landing extends BaseController
         }
 
         $election = (new ElectionModel())->find((int) $candidate['election_id']);
-        if ($election === null || ($election['status'] ?? 'draft') === 'draft') {
+        if ($election === null
+            || ($election['status'] ?? 'draft') === 'draft'
+            || (int) ($election['is_enabled'] ?? 1) !== 1) {
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
         }
 

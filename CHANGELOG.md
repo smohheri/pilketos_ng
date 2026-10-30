@@ -8,9 +8,17 @@ Format mengikuti [Keep a Changelog](https://keepachangelog.com/id-ID/1.1.0/) dan
 
 ### Planned
 
-- Pilihan mode aplikasi terpusat: OSIS saja, Poltar saja, atau keduanya.
 - Peningkatan cakupan test otomatis untuk alur voting berurutan.
 - Dokumentasi operasional panitia dan buku panduan pemilih.
+
+## [1.1.0] - 2026-10-30
+
+### Added
+
+- Halaman **Mode Aplikasi** (`/admin/mode-aplikasi`) untuk mengaktifkan OSIS saja, Poltar saja, atau keduanya.
+- Kolom `elections.is_enabled` untuk menyembunyikan pemilihan yang tidak digunakan tanpa menghapus datanya.
+- Nama tampilan OSIS dan Poltar dapat diganti admin melalui Mode Aplikasi (disimpan pada `system_settings`).
+- Pengaturan admin **Aktifkan penilaian** untuk mengaktifkan fitur kriteria penilaian; saat aktif, panitia masing-masing dapat menambahkan kriteria dan nilai kandidat pada pemilihannya.
 
 ## [1.0.0] - 2026-10-29
 

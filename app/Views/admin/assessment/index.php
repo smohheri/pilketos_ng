@@ -4,6 +4,7 @@
 $pageTitle = 'Penilaian';
 $pageSubtitle = 'Susun variabel penilaian dan isi nilai setiap kandidat.';
 $meta = phase_meta($phase);
+$assessmentEnabled = $assessmentEnabled ?? false;
 $report = $report ?? null;
 $reportCandidates = $reportCandidates ?? [];
 $criteria = $criteria ?? [];
@@ -46,6 +47,16 @@ $number = static fn ($value, int $decimals = 2): string => $value === null
         <a href="<?= base_url('admin/pemilihan') ?>" class="btn btn-primary mt-6">Buat pemilihan <?= icon('arrow-right', 'h-4 w-4') ?></a>
     </div>
 <?php else: ?>
+    <?php if (! $assessmentEnabled): ?>
+        <div class="rounded-4xl border-2 border-ink bg-paper p-8 text-center shadow-hard">
+            <span class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-sun/40"><?= icon('star', 'h-7 w-7') ?></span>
+            <h2 class="mt-5 text-2xl font-bold">Penilaian belum diaktifkan.</h2>
+            <p class="mx-auto mt-2 max-w-md text-sm text-ink/50"><?= is_admin() ? 'Aktifkan fitur penilaian agar panitia dapat menambahkan kriteria dan mengisi nilai kandidat.' : 'Hubungi admin untuk mengaktifkan fitur penilaian dan menambahkan kriteria.' ?></p>
+            <?php if (is_admin()): ?>
+                <a href="<?= base_url('admin/pengaturan') ?>" class="btn btn-primary mt-6">Buka Pengaturan <?= icon('arrow-right', 'h-4 w-4') ?></a>
+            <?php endif; ?>
+        </div>
+    <?php else: ?>
     <div class="flex flex-col gap-4 rounded-4xl border-2 border-ink/10 bg-paper p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
         <div class="min-w-0">
             <div class="flex flex-wrap items-center gap-2">
@@ -320,5 +331,6 @@ $number = static fn ($value, int $decimals = 2): string => $value === null
             </form>
         <?php endif; ?>
     </div>
+    <?php endif; ?>
 <?php endif; ?>
 <?= $this->endSection() ?>

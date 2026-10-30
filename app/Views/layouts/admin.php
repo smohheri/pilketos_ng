@@ -97,6 +97,7 @@ $adminElections = admin_elections();
                     <p class="admin-nav-section">Khusus Admin</p>
                     <a href="<?= base_url('admin/pengguna') ?>" class="admin-link <?= $is('pengguna') ? 'is-active' : '' ?>"><?= icon('key', 'h-[18px] w-[18px]') ?> Pengguna</a>
                     <a href="<?= base_url('admin/audit') ?>" class="admin-link <?= $is('audit') ? 'is-active' : '' ?>"><?= icon('shield', 'h-[18px] w-[18px]') ?> Audit Log</a>
+                    <a href="<?= base_url('admin/mode-aplikasi') ?>" class="admin-link <?= $is('mode-aplikasi') ? 'is-active' : '' ?>"><?= icon('ballot', 'h-[18px] w-[18px]') ?> Mode Aplikasi</a>
                     <a href="<?= base_url('admin/pengaturan') ?>" class="admin-link <?= $path === 'admin/pengaturan' ? 'is-active' : '' ?>"><?= icon('settings', 'h-[18px] w-[18px]') ?> Pengaturan</a>
                     <a href="<?= base_url('admin/pengaturan/openwa') ?>" class="admin-link <?= $is('pengaturan/openwa') ? 'is-active' : '' ?>"><?= icon('whatsapp', 'h-[18px] w-[18px]') ?> WhatsApp</a>
                 <?php endif; ?>

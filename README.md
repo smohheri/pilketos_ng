@@ -139,19 +139,33 @@ cakra.receiptSalt = 'ganti-dengan-nilai-acak-yang-kuat'
 
 Ganti sebelum pemilihan resmi dimulai. Mengganti salt setelah ada suara membuat kode bukti lama tidak dapat diverifikasi.
 
+## Penilaian kandidat
+
+Admin dapat mengaktifkan fitur penilaian di **Admin > Pengaturan > Aktifkan penilaian**.
+
+- Saat aktif, setiap panitia dapat menambahkan kriteria dan mengisi nilai kandidat untuk pemilihan yang ditugaskan melalui menu **Penilaian**.
+- Saat nonaktif, form kriteria tidak tampil dan perubahan nilai ditolak, tetapi data penilaian yang sudah ada tetap tersimpan.
+
 ## Mengatur OSIS dan Poltar
 
-Status setiap pemilihan diatur di **Admin > Pemilihan**:
+**Mode Aplikasi** (`/admin/mode-aplikasi`) di menu **Admin > Mode Aplikasi** menentukan pemilihan mana yang aktif:
+
+- Centang OSIS saja, Poltar saja, atau keduanya.
+- Nama tampilan OSIS dan Poltar dapat diganti pada kolom **Nama pemilihan**. Kosongkan untuk kembali ke nama bawaan.
+- Pemilihan yang tidak dicentang disembunyikan dari publik, login, dan bilik suara, tetapi datanya tetap tersimpan.
+- Minimal satu pemilihan harus aktif.
+
+Status dan jadwal setiap pemilihan tetap diatur di **Admin > Pemilihan**:
 
 - `draft`: pemilihan disembunyikan dan tidak masuk alur voting.
 - `published`: pemilihan tampil dan mengikuti jadwal.
 - `closed`: pemungutan suara berhenti dan hasil tampil setelah waktu pengumuman.
 
-Konfigurasi yang didukung:
+Kombinasi yang didukung:
 
-- Hanya OSIS: OSIS `published`, Poltar `draft`.
-- Hanya Poltar: Poltar `published`, OSIS `draft`.
-- Keduanya: keduanya `published`.
+- Hanya OSIS: aktifkan OSIS, nonaktifkan Poltar.
+- Hanya Poltar: aktifkan Poltar, nonaktifkan OSIS.
+- Keduanya: aktifkan keduanya, atur status di jadwal masing-masing.
 
 ## Alur pemilih
 
